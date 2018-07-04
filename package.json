@@ -1,0 +1,31 @@
+{
+  "name": "json_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx babel ./src -d ./build",
+    "g-mock-data": "npm run build && node ./build/generate-mock-data.js",
+    "s-mockapi": "npx json-server --watch build/api/db.json --port 4001"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "faker": "^4.1.0",
+    "json-schema-faker": "^0.5.0-rc15",
+    "json-server": "^0.12.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "chalk": "^2.4.0"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  }
+}
